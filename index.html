@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Server Hub</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f111a;
+      color: #ffffff;
+      text-align: center;
+      padding: 50px 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #1a1d28;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    h1 { color: #5865F2; }
+    p { font-size: 1.1rem; color: #b9bbbe; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin: 10px;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-discord { background-color: #5865F2; }
+    .btn-discord:hover { background-color: #4752c4; }
+    .btn-mc { background-color: #2e7d32; }
+    .btn-mc:hover { background-color: #1b5e20; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to My Server!</h1>
+    <p>Join our Discord community and hop onto the Minecraft server today.</p>
+
+    <div>
+      <a href="https://discord.gg/YOUR-INVITE-CODE" class="btn btn-discord" target="_blank">
+        Join Discord
+      </a>
+      
+      <button class="btn btn-mc" onclick="navigator.clipboard.writeText('play.yourserver.com'); alert('Server IP copied to clipboard!');">
+        Copy Server IP
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
