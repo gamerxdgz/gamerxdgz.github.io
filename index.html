@@ -3,60 +3,235 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Server Hub</title>
+  <title>Minecraft & Discord Server Hub</title>
   <style>
+    :root {
+      --bg-color: #0f111a;
+      --card-bg: #1a1d28;
+      --accent-discord: #5865F2;
+      --accent-mc: #2e7d32;
+      --accent-store: #f57c00;
+      --text-main: #ffffff;
+      --text-sub: #b9bbbe;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f111a;
-      color: #ffffff;
-      text-align: center;
-      padding: 50px 20px;
+      background-color: var(--bg-color);
+      color: var(--text-main);
       margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
     .container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #1a1d28;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      max-width: 900px;
+      width: 100%;
     }
-    h1 { color: #5865F2; }
-    p { font-size: 1.1rem; color: #b9bbbe; }
-    .btn {
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: var(--accent-discord);
+    }
+
+    /* Live Server Status Box */
+    .status-card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .status-badge {
       display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .online { background-color: #2e7d32; color: white; }
+    .offline { background-color: #c62828; color: white; }
+
+    /* Action Buttons */
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 14px 28px;
       color: white;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: bold;
       border: none;
       cursor: pointer;
       font-size: 1rem;
+      transition: transform 0.2s, opacity 0.2s;
     }
-    .btn-discord { background-color: #5865F2; }
-    .btn-discord:hover { background-color: #4752c4; }
-    .btn-mc { background-color: #2e7d32; }
-    .btn-mc:hover { background-color: #1b5e20; }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-discord { background-color: var(--accent-discord); }
+    .btn-mc { background-color: var(--accent-mc); }
+    .btn-store { background-color: var(--accent-store); }
+
+    /* Layout Grid for Widgets & Info */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media(min-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      border-bottom: 2px solid #2a2e3f;
+      padding-bottom: 10px;
+    }
+
+    /* Rules List */
+    .rules-list {
+      text-align: left;
+      padding-left: 20px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* Discord Embed Widget Container */
+    .discord-widget-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      height: 400px;
+    }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h1>Welcome to My Server!</h1>
-    <p>Join our Discord community and hop onto the Minecraft server today.</p>
+    <header>
+      <h1>My Minecraft Community</h1>
+      <p style="color: var(--text-sub);">Join the adventure, make friends, and build together!</p>
+    </header>
 
-    <div>
+    <div class="status-card">
+      <span id="server-status" class="status-badge offline">Checking Server...</span>
+      <h3 id="player-count" style="margin: 5px 0;">-- / -- Players Online</h3>
+      <p style="color: var(--text-sub); font-size: 0.9rem; margin: 0;">Server IP: <strong id="ip-text">mc.hypixel.net</strong></p>
+    </div>
+
+    <div class="btn-group">
       <a href="https://discord.gg/YOUR-INVITE-CODE" class="btn btn-discord" target="_blank">
         Join Discord
       </a>
       
-      <button class="btn btn-mc" onclick="navigator.clipboard.writeText('play.yourserver.com'); alert('Server IP copied to clipboard!');">
+      <button class="btn btn-mc" onclick="copyIP()">
         Copy Server IP
       </button>
+
+      <a href="https://yourstore.tebex.io" class="btn btn-store" target="_blank">
+        Server Store
+      </a>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Server Rules</h2>
+        <ol class="rules-list">
+          <li><strong>Be Respectful:</strong> Harassment and toxic behavior will not be tolerated.</li>
+          <li><strong>No Cheating:</strong> Hacks, hacked clients, or unfair exploits are prohibited.</li>
+          <li><strong>No Spamming:</strong> Keep chat clean in-game and on Discord.</li>
+          <li><strong>Respect Claims:</strong> Griefing or stealing on claimed land is strictly forbidden.</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>Discord Community</h2>
+        <div class="discord-widget-container">
+          <iframe 
+            src="https://discord.com/widget?id=YOUR_DISCORD_SERVER_ID&theme=dark" 
+            allowtransparency="true" 
+            frameborder="0" 
+            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+          </iframe>
+        </div>
+      </div>
     </div>
   </div>
+
+  <script>
+    // CONFIGURATION: Set your Minecraft Server IP here
+    const SERVER_IP = 'mc.hypixel.net'; // Replace with your actual Minecraft IP
+
+    // Function to Copy Server IP to Clipboard
+    function copyIP() {
+      navigator.clipboard.writeText(SERVER_IP);
+      alert('Server IP (' + SERVER_IP + ') copied to clipboard!');
+    }
+
+    // Function to Fetch Live Minecraft Server Status via API
+    async function fetchServerStatus() {
+      try {
+        const response = await fetch(`https://api.mcsrvstat.us/2/${SERVER_IP}`);
+        const data = await response.json();
+
+        const statusBadge = document.getElementById('server-status');
+        const playerCount = document.getElementById('player-count');
+        document.getElementById('ip-text').innerText = SERVER_IP;
+
+        if (data.online) {
+          statusBadge.innerText = 'Online';
+          statusBadge.className = 'status-badge online';
+          playerCount.innerText = `${data.players.online} / ${data.players.max} Players Online`;
+        } else {
+          statusBadge.innerText = 'Offline';
+          statusBadge.className = 'status-badge offline';
+          playerCount.innerText = 'Server Offline';
+        }
+      } catch (error) {
+        document.getElementById('server-status').innerText = 'Status Error';
+      }
+    }
+
+    // Fetch server status on page load
+    fetchServerStatus();
+  </script>
 
 </body>
 </html>
