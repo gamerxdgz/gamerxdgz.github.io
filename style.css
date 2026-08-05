@@ -1,0 +1,146 @@
+:root {
+  --bg-color: #0f111a;
+  --card-bg: #1a1d28;
+  --accent-discord: #5865F2;
+  --accent-mc: #2e7d32;
+  --accent-vote: #9c27b0;
+  --text-main: #ffffff;
+  --text-sub: #b9bbbe;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: var(--accent-discord);
+}
+
+/* Live Server Status Box */
+.status-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.online { background-color: #2e7d32; color: white; }
+.offline { background-color: #c62828; color: white; }
+
+/* Action Buttons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 14px 28px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn-discord { background-color: var(--accent-discord); }
+.btn-mc { background-color: var(--accent-mc); }
+.btn-vote { background-color: var(--accent-vote); }
+
+/* Layout Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media(min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  margin-top: 0;
+  border-bottom: 2px solid #2a2e3f;
+  padding-bottom: 10px;
+}
+
+/* Rules List */
+.rules-list {
+  text-align: left;
+  padding-left: 20px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+/* Custom Toast Notification */
+#toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #2e7d32;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 14px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}
