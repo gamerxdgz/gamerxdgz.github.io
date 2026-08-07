@@ -1,225 +1,795 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GamerXD_GZ SMP</title>
-  <style>
-    :root {
-      --bg-color: #0f111a;
-      --card-bg: #1a1d28;
-      --accent-discord: #5865F2;
-      --accent-mc: #2e7d32;
-      --accent-store: #f57c00;
-      --text-main: #ffffff;
-      --text-sub: #b9bbbe;
-    }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    <meta charset="UTF-8">
 
-    .container {
-      max-width: 900px;
-      width: 100%;
-    }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
+    <title>GamerXD_GZ SMP</title>
 
-    h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      color: var(--accent-discord);
-    }
+    <meta
+        name="description"
+        content="GamerXD_GZ SMP - Minecraft Survival Community"
+    >
 
-    /* Live Server Status Box */
-    .status-card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
-    .status-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-weight: bold;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-    }
-
-    .online { background-color: #2e7d32; color: white; }
-    .offline { background-color: #c62828; color: white; }
-
-    /* Action Buttons */
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      padding: 14px 28px;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: transform 0.2s, opacity 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
-
-    .btn-discord { background-color: var(--accent-discord); }
-    .btn-mc { background-color: var(--accent-mc); }
-    .btn-store { background-color: var(--accent-store); }
-
-    /* Layout Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    @media(min-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .card {
-      background: var(--card-bg);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    .card h2 {
-      margin-top: 0;
-      border-bottom: 2px solid #2a2e3f;
-      padding-bottom: 10px;
-    }
-
-    /* Rules List */
-    .rules-list {
-      text-align: left;
-      padding-left: 20px;
-      color: var(--text-sub);
-      line-height: 1.7;
-    }
-
-    /* Custom Toast Notification */
-    #toast {
-      visibility: hidden;
-      min-width: 200px;
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      border-radius: 8px;
-      padding: 14px;
-      position: fixed;
-      z-index: 1000;
-      bottom: 30px;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      opacity: 0;
-      transition: opacity 0.3s, visibility 0.3s;
-    }
-
-    #toast.show {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
 </head>
+
+
 <body>
 
-  <div class="container">
-    <header>
-      <h1>GamerXD_GZ SMP</h1>
-      <p style="color: var(--text-sub);">Join the adventure, make friends, and build together!</p>
+
+    <!-- Background -->
+
+    <div class="background-glow glow-left"></div>
+    <div class="background-glow glow-right"></div>
+
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="server-tag">
+
+                <span class="online-dot"></span>
+
+                GAMERXD_GZ SMP
+
+            </div>
+
+
+            <h1>
+
+                Your Adventure
+
+                <span>Starts Here.</span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A friendly Minecraft survival community
+                where you can explore, build, survive,
+                and have fun.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="https://discord.com/invite/4BHUKrzXRf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn discord-btn"
+                >
+
+                    💬
+
+                    Join Discord
+
+                </a>
+
+
+                <button
+                    class="btn copy-btn"
+                    data-copy-ip
+                >
+
+                    📋
+
+                    Copy Server IP
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="scroll-down">
+
+            <span></span>
+
+            SCROLL TO EXPLORE
+
+        </div>
+
     </header>
 
-    <div class="status-card">
-      <span id="server-status" class="status-badge offline">Checking Server...</span>
-      <h3 id="player-count" style="margin: 10px 0; font-size: 1.5rem;">-- / -- Players Online</h3>
-      <p style="color: var(--text-sub); font-size: 0.95rem; margin: 0;">Server IP: <strong id="ip-text">GamerXD_GZ.aternos.me</strong></p>
+
+
+    <main class="container">
+
+
+        <!-- SERVER STATUS -->
+
+        <section class="section">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SERVER STATUS
+                    </span>
+
+                    <h2>
+                        GamerXD_GZ SMP
+                    </h2>
+
+                </div>
+
+
+                <div class="live-label">
+
+                    <span></span>
+
+                    LIVE
+
+                </div>
+
+            </div>
+
+
+            <div class="status-card">
+
+
+                <div class="status-top">
+
+
+                    <div class="server-icon">
+
+                        ⛏️
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="small-title">
+                            CURRENT STATUS
+                        </span>
+
+
+                        <div
+                            id="server-status"
+                            class="status offline"
+                        >
+
+                            <span></span>
+
+                            Checking...
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="status-grid">
+
+
+                    <div class="status-box">
+
+                        <div class="status-box-icon">
+                            👥
+                        </div>
+
+                        <div>
+
+                            <small>
+                                PLAYERS
+                            </small>
+
+                            <strong id="player-count">
+                                -- / --
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="status-box">
+
+                        <div class="status-box-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <small>
+                                VERSION
+                            </small>
+
+                            <strong>
+                                1.21.11
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="status-box">
+
+                        <div class="status-box-icon">
+                            🌐
+                        </div>
+
+                        <div>
+
+                            <small>
+                                SERVER IP
+                            </small>
+
+                            <strong id="ip-text">
+                                GamerXD_GZ.aternos.me
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <section class="quick-actions">
+
+
+            <a
+                href="https://discord.com/invite/4BHUKrzXRf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="quick-card"
+            >
+
+                <div class="quick-icon discord">
+                    💬
+                </div>
+
+                <div>
+
+                    <h3>
+                        Discord
+                    </h3>
+
+                    <p>
+                        Join our community
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+
+            <button
+                class="quick-card"
+                data-copy-ip
+            >
+
+                <div class="quick-icon blue">
+                    📋
+                </div>
+
+                <div>
+
+                    <h3>
+                        Copy IP
+                    </h3>
+
+                    <p>
+                        GamerXD_GZ.aternos.me
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <a
+                href="#rules"
+                class="quick-card"
+            >
+
+                <div class="quick-icon green">
+                    📜
+                </div>
+
+                <div>
+
+                    <h3>
+                        Server Rules
+                    </h3>
+
+                    <p>
+                        Play fair and have fun
+                    </p>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- FEATURES -->
+
+        <section class="section features-section">
+
+
+            <div class="center-title">
+
+                <span class="eyebrow">
+                    THE EXPERIENCE
+                </span>
+
+                <h2>
+                    Why Play GamerXD_GZ?
+                </h2>
+
+                <p>
+                    Everything you need for a great
+                    Minecraft survival experience.
+                </p>
+
+            </div>
+
+
+
+            <div class="features-grid">
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🌎
+                    </div>
+
+                    <h3>
+                        Survival
+                    </h3>
+
+                    <p>
+                        Explore the world, gather resources,
+                        build your base, and create your
+                        own adventure.
+                    </p>
+
+                    <span class="number">
+                        01
+                    </span>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🏡
+                    </div>
+
+                    <h3>
+                        Land Claims
+                    </h3>
+
+                    <p>
+                        Protect your builds and belongings
+                        from unwanted griefing.
+                    </p>
+
+                    <span class="number">
+                        02
+                    </span>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🎉
+                    </div>
+
+                    <h3>
+                        Community Events
+                    </h3>
+
+                    <p>
+                        Join events, giveaways,
+                        activities, and community
+                        challenges.
+                    </p>
+
+                    <span class="number">
+                        03
+                    </span>
+
+                </article>
+
+
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        🛡️
+                    </div>
+
+                    <h3>
+                        Friendly Community
+                    </h3>
+
+                    <p>
+                        Meet other players and enjoy
+                        a welcoming gaming community.
+                    </p>
+
+                    <span class="number">
+                        04
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RULES + DISCORD -->
+
+        <section
+            class="two-column"
+            id="rules"
+        >
+
+
+            <!-- RULES -->
+
+            <article class="large-card">
+
+
+                <div class="card-title">
+
+                    <div class="title-icon">
+                        📜
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            PLAY FAIR
+                        </span>
+
+                        <h2>
+                            Server Rules
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="rules">
+
+
+                    <div class="rule">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Be Respectful
+                            </h3>
+
+                            <p>
+                                Treat everyone with respect.
+                                Harassment, bullying, and
+                                toxic behavior are not allowed.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="rule">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                No Cheating
+                            </h3>
+
+                            <p>
+                                Hacks, hacked clients, x-ray,
+                                and unfair exploits are prohibited.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="rule">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                No Spamming
+                            </h3>
+
+                            <p>
+                                Keep the chat clean and
+                                avoid disruptive messages.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="rule">
+
+                        <span>
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Respect Claims
+                            </h3>
+
+                            <p>
+                                Never grief or steal from
+                                another player's protected land.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="rule">
+
+                        <span>
+                            05
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Have Fun
+                            </h3>
+
+                            <p>
+                                Enjoy the server and help
+                                make the community better.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- DISCORD -->
+
+            <article class="large-card discord-card">
+
+
+                <div class="discord-glow"></div>
+
+
+                <div class="card-title">
+
+                    <div class="title-icon discord-title">
+                        💬
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            COMMUNITY
+                        </span>
+
+                        <h2>
+                            Join Discord
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="discord-description">
+
+                    Stay up to date with server announcements,
+                    chat with other players, join events,
+                    and get help from the community.
+
+                </p>
+
+
+                <div class="discord-tags">
+
+                    <span>
+                        📢 Announcements
+                    </span>
+
+                    <span>
+                        🎉 Events
+                    </span>
+
+                    <span>
+                        💬 Community Chat
+                    </span>
+
+                    <span>
+                        🛠️ Support
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="https://discord.com/invite/4BHUKrzXRf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn discord-btn"
+                >
+
+                    Join Discord
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </article>
+
+
+        </section>
+
+
+
+        <!-- FINAL JOIN -->
+
+        <section class="join-section">
+
+
+            <div>
+
+                <span class="eyebrow">
+                    READY TO PLAY?
+                </span>
+
+                <h2>
+                    Join GamerXD_GZ SMP
+                </h2>
+
+                <p>
+                    Copy the server IP and start your adventure.
+                </p>
+
+            </div>
+
+
+            <button
+                class="ip-button"
+                data-copy-ip
+            >
+
+                <span>
+                    GamerXD_GZ.aternos.me
+                </span>
+
+                <strong>
+                    📋 Copy
+                </strong>
+
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- TOAST -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+
+        <span>
+            ✓
+        </span>
+
+        <p>
+            Server IP copied!
+        </p>
+
     </div>
 
-    <div class="btn-group">
-  <a href="https://discord.com/invite/4BHUKrzXRf" class="btn btn-discord" target="_blank">
-    Join Discord
-  </a>
-  
-  <button class="btn btn-mc" onclick="copyIP()">
-    Copy Server IP
-  </button>
-</div>
 
-    <div class="grid">
-      <div class="card">
-        <h2>Server Rules</h2>
-        <ol class="rules-list">
-          <li><strong>Be Respectful:</strong> Harassment and toxic behavior will not be tolerated.</li>
-          <li><strong>No Cheating:</strong> Hacks, hacked clients, or unfair exploits are prohibited.</li>
-          <li><strong>No Spamming:</strong> Keep chat clean in-game and on Discord.</li>
-          <li><strong>Respect Claims:</strong> Griefing or stealing on claimed land is strictly forbidden.</li>
-        </ol>
-      </div>
 
-      <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <h2>Discord Community</h2>
-          <p style="color: var(--text-sub); margin-top: 15px; line-height: 1.6;">
-            Connect with our active player base, stay up to date with server announcements, and hop into voice channels with your friends!
-          </p>
-        </div>
-        <div style="margin-top: 25px;">
-          <a href="https://discord.com/invite/4BHUKrzXRf" class="btn btn-discord" target="_blank" style="display: block;">
-            Launch Discord 🚀
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script src="script.js"></script>
 
-  <div id="toast">IP Copied to Clipboard!</div>
+</body>
 
-  <script>
-    const SERVER_IP = 'GamerXD_GZ.aternos.me';
-
-    // Smooth Toast Notification for Copy IP
-    function copyIP() {
-      navigator.clipboard.writeText(SERVER_IP);
-      const toast = document.getElementById('toast');
-      toast.className = 'show';
-      setTimeout(() => { 
-        toast.className = toast.className.replace('show', ''); 
-      }, 2500);
-    }
-
-    // Live Minecraft Server API Fetcher
-    async function fetchServerStatus() {
-      try {
-        const response = await fetch(`
+</html>
